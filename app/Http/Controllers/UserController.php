@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models; 
-use Illuminate\Http\Request;
+use App\Http\Requests\User\UpdateRequest;
 use Illuminate\Support\Facades\Auth;
 
 class UserController extends Controller
@@ -22,8 +22,12 @@ class UserController extends Controller
         return view('users.edit', ['user' => $user]);
     }
 
-    public function update(Request $request)
+    public function update(UpdateRequest $request)
     {
-        dd($request->all());
+        $user = Auth::user();
+        $user->fill($request->all());
+        $user->save();
+        
+        return redirect()->back()->with(['message' => '更新しました！']);
     }
 }
