@@ -22,8 +22,8 @@ class UserController extends Controller
         return view('users.edit', ['user' => $user]);
     }
 
-    public function update()
+    public function update(Request $request)
     {
-        dd('動いた！');
+        dd($request->all());
     }
 }
