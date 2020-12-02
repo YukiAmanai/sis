@@ -12,16 +12,26 @@ class UsersTableSeeder extends Seeder
      */
     public function run()
     {
-        User::create([
-            'name' => 'トム',
-            'email' => 'tom@example.com',
-            'password' => bcrypt('password'), // bcrypt でパスワードをハッシュ化する
-        ]);
-        
-        User::create([
-            'name' => 'ジェリー',
-            'email' => 'jerry@example.com',
-            'password' => bcrypt('password'),
-        ]);
+        $dataSet = [
+            [
+                'name' => 'トム',
+                'email' => 'tom@example.com',
+                'password' => bcrypt('password'),
+                'gender' =>'男性',
+                
+            ],
+            [
+                'name' => 'ジェリー',
+                'email' => 'jerry@example.com',
+                'password' => bcrypt('password'),
+                'gender' =>'女性',
+                
+            ],
+        ];
+    
+        foreach ($dataSet as $data) {
+            User::create($data);
+        }
     }
 }
+
