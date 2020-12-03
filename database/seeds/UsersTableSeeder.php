@@ -1,7 +1,7 @@
 <?php
 
-use App\Models\User;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\Auth;
 
 class UsersTableSeeder extends Seeder
 {
@@ -17,20 +17,18 @@ class UsersTableSeeder extends Seeder
                 'name' => 'トム',
                 'email' => 'tom@example.com',
                 'password' => bcrypt('password'),
-                'gender' =>'男性',
                 
             ],
             [
                 'name' => 'ジェリー',
                 'email' => 'jerry@example.com',
                 'password' => bcrypt('password'),
-                'gender' =>'女性',
                 
             ],
         ];
     
         foreach ($dataSet as $data) {
-            User::create($data);
+           User::create($data);
         }
     }
 }
