@@ -13,7 +13,7 @@ class PostController extends Controller
     {
        $posts = Post::with(['user'])->orderBy('created_at', 'desc')->get();
 
-        return view('index', ['posts' => $posts]);
+        return view('index', ['posts' => $posts ]);
     }
 
     public function create()
