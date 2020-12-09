@@ -27,4 +27,9 @@ class Post extends Model
     {
         return $this->belongsToMany(User::class, 'bookmarks');
     }
+
+    public function category()
+    {
+        return $this->belongsTo(Category::class);
+    }
 }

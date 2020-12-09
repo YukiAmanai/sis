@@ -38,3 +38,5 @@ Route::middleware('auth')->prefix('bookmarks')->as('bookmarks.')->group(function
     Route::post('{post}', 'BookmarkController@add')->name('add'); 
     Route::post('{post}/remove', 'BookmarkController@remove')->name('remove');
 });
+
+Route::get('categories/index', 'CategoryController@index')->middleware('auth')->name('categories.index');
