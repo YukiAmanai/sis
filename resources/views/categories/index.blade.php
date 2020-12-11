@@ -9,7 +9,7 @@
     <form method="get" action="{{ route('posts.create')}}">
     @csrf
       <button type="submit">{{ $category->name }}</button>
-      <div class="card-body">{{ $category->gender}}</div>
+      <div class="card-body"></div>
       
     </div>
     </form>

@@ -13,15 +13,18 @@ class PostsTableSeeder extends Seeder
     public function run()
     {
         $dataSet = [
-            [
+            [ 
+                'category_id' =>1,
                 'user_id' => 1,
                 'body' => '初投稿です！',
             ],
             [
+                'category_id' =>2,
                 'user_id' => 1,
                 'body' => '自動でデータを入れました',
             ],
             [
+                'category_id' =>9,
                 'user_id' => 2,
                 'body' => 'ID: 2 のユーザーの投稿です',
             ],

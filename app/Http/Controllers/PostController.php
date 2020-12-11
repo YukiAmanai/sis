@@ -23,9 +23,11 @@ class PostController extends Controller
 
     public function store(Request $request)
    {
+    
     $post = new Post;
     $post->fill($request->all());
     $post->user()->associate(Auth::user());
+    $post->category()->associate(Auth::category());
     $post->save();
 
     return redirect()->to('/'); 
