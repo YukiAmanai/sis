@@ -15,13 +15,14 @@ class CreatePostsTable extends Migration
     {
         Schema::create('posts', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->unsignedBigInteger('user_id');
             $table->unsignedBigInteger('category_id');
+            $table->unsignedBigInteger('user_id');
             $table->string('body');
             $table->timestamps();
             $table->softDeletes();
-        });
-    }
+    });
+} 
+
 
     /**
      * Reverse the migrations.

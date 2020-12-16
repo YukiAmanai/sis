@@ -11,7 +11,7 @@ class Post extends Model
 {
     use SoftDeletes;
 
-    protected $fillable = ['body'];
+    protected $fillable = ['body','category_id'];
 
     public function user()
     {
@@ -30,6 +30,6 @@ class Post extends Model
 
     public function category()
     {
-        return $this->hasMany(Category::class);
+        return $this->belongsTo(Category::class);
     }
 }

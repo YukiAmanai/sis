@@ -6,13 +6,11 @@
     @foreach($categories as $category)
     
     <div class="card">
-    <form method="get" action="{{ route('posts.create')}}">
     @csrf
-      <button type="submit">{{ $category->name }}</button>
+    <a href="{{ route('posts.create', ['category_id'=>$category->id])}}">{{ $category->name }}</a>
       <div class="card-body"></div>
       
     </div>
-    </form>
     @endforeach
   </div>
 @endsection

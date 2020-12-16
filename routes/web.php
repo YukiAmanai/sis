@@ -11,17 +11,22 @@
 |
 */
 
-Route::get('/', 'PostController@index');
+//$this->get('login', 'Auth\LoginController@showLoginForm')->name('login');
+
+Route::get('/', function () {
+    
+       return view('top');
+});
+Route::get('/timeline', 'PostController@index')->name('timeline');
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+//Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/users/{id}', 'UserController@show');
 Route::middleware('auth')->group(function () {
     Route::get('me', 'UserController@edit');
     Route::post('me', 'UserController@update')->name('users.update');
 });    
 Route::prefix('posts')->as('posts.')->group(function () {
-    // auth が適用される (ログインユーザーのみ許可)
     Route::middleware('auth')->group(function () {
         Route::get('create', 'PostController@create')->name('create');
         Route::post('store', 'PostController@store')->name('store');
