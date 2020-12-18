@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models; 
+use App\Models\User;
 use App\Http\Requests\User\UpdateRequest;
 use Illuminate\Support\Facades\Auth;
 

@@ -2,6 +2,7 @@
 
 use App\Models\User;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\Auth;
 
 class UsersTableSeeder extends Seeder
 {
@@ -12,16 +13,26 @@ class UsersTableSeeder extends Seeder
      */
     public function run()
     {
-        User::create([
-            'name' => 'トム',
-            'email' => 'tom@example.com',
-            'password' => bcrypt('password'), // bcrypt でパスワードをハッシュ化する
-        ]);
-        
-        User::create([
-            'name' => 'ジェリー',
-            'email' => 'jerry@example.com',
-            'password' => bcrypt('password'),
-        ]);
+        $dataSet = [
+            [
+                'name' => 'トム',
+                'email' => 'tom@example.com',
+                'gender'=> '男性',
+                'password' => bcrypt('password'),
+                
+            ],
+            [
+                'name' => 'ジェリー',
+                'email' => 'jerry@example.com',
+                'gender'=> '女性',
+                'password' => bcrypt('password'),
+                
+            ],
+        ];
+    
+        foreach ($dataSet as $data) {
+           User::create($data);
+        }
     }
 }
+
