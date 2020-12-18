@@ -13,16 +13,16 @@ class PostController extends Controller
     public function index(Request $request)
     {
         $posts = Post::where('category_id',$request->get('category_id'))->with(['user'])->orderBy('created_at', 'desc')->get();
-        //$posts = Post::where('category_id','name')->get();
-
-        return view('index', ['posts' => $posts ]);
+        
+        return view('index', ['posts'=>$posts ]);
     }
 
     public function create(Request $request)
     {
         $category_id = $request->get('category_id');
+        $images = $request->get('image');
 
-        return view('posts.create')->with(['category_id' => $category_id]);
+        return view('posts.create')->with(['category_id'=>$category_id,'images'=>$images ]);
     }
 
     public function store(Request $request)
@@ -30,7 +30,10 @@ class PostController extends Controller
     $post = new Post;
     $post->fill($request->all());
     $post->user()->associate(Auth::user());
-    $id =  $request->get('category_id');
+    $image1 = $request->get('image');
+    $images = Post::where('image', $image1)->get();
+    $post->$images = base64_encode(file_get_contents([$images]));
+    $id = $request->get('category_id');
     //dd($request->all());
     $post->save();
 
@@ -45,7 +48,7 @@ class PostController extends Controller
 
     $post->delete();
 
-    return redirect()->to('/');
+    return redirect()->to('categories/index');
    }
 
    public function show(Post $post)
@@ -59,7 +62,7 @@ class PostController extends Controller
    public function reply(Request $request, Post $post)
    {
     $reply = new Reply;
-    $reply->fill($request->all());
+    $reply->fill($request->all()); 
     $reply->user()->associate(Auth::user());
     $reply->post()->associate($post);
     $reply->save();

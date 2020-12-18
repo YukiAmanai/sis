@@ -11,13 +11,12 @@
 |
 */
 
-//$this->get('login', 'Auth\LoginController@showLoginForm')->name('login');
-
 Route::get('/', function () {
     
        return view('top');
 });
-Route::get('/timeline', 'PostController@index')->name('timeline');
+
+Route::get('timeline', 'PostController@index')->name('timeline');
 Auth::routes();
 
 //Route::get('/home', 'HomeController@index')->name('home');
@@ -34,7 +33,6 @@ Route::prefix('posts')->as('posts.')->group(function () {
         Route::post('{post}/reply', 'PostController@reply')->name('reply');
     });
 
-    // auth が適用されない (ログインしてなくても閲覧可)
     Route::get('{post}', 'PostController@show')->name('show');
 });
 

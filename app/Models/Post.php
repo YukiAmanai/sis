@@ -11,7 +11,7 @@ class Post extends Model
 {
     use SoftDeletes;
 
-    protected $fillable = ['body','category_id'];
+    protected $fillable = ['body','category_id','image'];
 
     public function user()
     {
