@@ -21,7 +21,6 @@ class PostController extends Controller
     {
         $category_id = $request->get('category_id');
         
-
         return view('posts.create')->with(['category_id'=>$category_id ]);
     }
 
