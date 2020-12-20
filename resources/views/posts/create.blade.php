@@ -8,14 +8,9 @@
         <div class="card-header">投稿する</div>
 
         <div class="card-body">
-          <form method="POST" action="{{ route('posts.store') }}" ectype="multpart/form-data">
+          <form method="POST" action="{{ route('posts.store') }}" enctype="multipart/form-data">
           @csrf
           <input id="image" type="file" name="image"> 
-          @foreach((array)$images as $image)
-          <div>
-              <img src="data:image/png;base64,{{ $image->images }}" alt="images" style="width: 30%; height: auto;">
-          </div>
-          @endforeach   
             
             <div class="form-group row">
               <label for="body" class="col-md-4 col-form-label text-md-right">内容</label>

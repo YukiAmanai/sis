@@ -20,9 +20,9 @@ class PostController extends Controller
     public function create(Request $request)
     {
         $category_id = $request->get('category_id');
-        $images = $request->get('image');
+        
 
-        return view('posts.create')->with(['category_id'=>$category_id,'images'=>$images ]);
+        return view('posts.create')->with(['category_id'=>$category_id ]);
     }
 
     public function store(Request $request)
@@ -30,9 +30,7 @@ class PostController extends Controller
     $post = new Post;
     $post->fill($request->all());
     $post->user()->associate(Auth::user());
-    $image1 = $request->get('image');
-    $images = Post::where('image', $image1)->get();
-    $post->$images = base64_encode(file_get_contents([$images]));
+    $post->image = base64_encode(file_get_contents($request->image));
     $id = $request->get('category_id');
     //dd($request->all());
     $post->save();
