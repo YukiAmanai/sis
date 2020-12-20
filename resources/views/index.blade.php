@@ -16,6 +16,9 @@
             <button type="submit" class="btn btn-danger">削除</button>
             </form>
             @endif
+            <div>
+                <img src="data:image/png;base64,{{ $post->image }}" alt="image" style="width: 30%; height: auto;">
+            </div>
         </div>
       <div>
     @endforeach
