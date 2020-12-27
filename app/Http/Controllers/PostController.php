@@ -34,7 +34,7 @@ class PostController extends Controller
     //dd($request->all());
     $post->save();
 
-    return redirect()->to(route('timeline', ['category_id'=>$id]));
+    return redirect()->to(route('timeline',['category_id'=>$id]));
    }
 
    public function delete(Post $post)
