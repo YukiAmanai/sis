@@ -1,7 +1,7 @@
 <ul class="slider">
-    <li><img src="001.JPG" alt="image01"></li>
-    <li><img src="002.jpg" alt="image02"></li>
-    <li><img src="003.jpg" alt="image03"></li>
-    <li><img src="004.jpg" alt="image04"></li>
+    <li><img src="images/img01.jpg" alt=""></li>
+    <li><img src="images/img02.jpg" alt=""></li>
+    <li><img src="images/img.03.jpg" alt=""></li>
+    <li><img src="images/img.04.jpg" alt=""></li>
 </ul>
 

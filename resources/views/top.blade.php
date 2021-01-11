@@ -3,6 +3,8 @@
 @section('content')
 
 @include('parts.image')
+
+<script src="js/top.js"></script>
         <h2>シューズの情報を投稿しょう！</h2>
 
         <h3>ネット通販で靴を気軽に買えるようにする</h3>
