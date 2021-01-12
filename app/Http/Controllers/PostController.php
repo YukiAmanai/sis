@@ -45,7 +45,7 @@ class PostController extends Controller
 
     $post->delete();
 
-    return redirect()->to('categories/index');
+    return redirect()->back();
    }
 
    public function show(Post $post)
