@@ -1,0 +1,36 @@
+h2{
+    margin: 100px auto;
+    text-align: center;
+}
+
+h3{  
+    text-align: center;
+}
+
+p{  
+    text-align: center;
+}
+
+div{
+    text-align: center;
+}
+
+.button {
+  display       : inline-block;
+  border-radius : 5%;          
+  font-size     : 26pt;        
+  cursor        : pointer;     
+  padding       : 12px;   
+  background    : #1394df;     
+  color         : #ffffff;     
+  line-height   : 1em;         
+  transition    : .3s;        
+  box-shadow    : 3px 3px 1px #666666; 
+  border        : 2px solid #1394df; 
+    
+}
+.button:hover {
+  box-shadow    : none;        /* カーソル時の影消去 */
+  color         : #1394df;     /* 背景色     */
+  background    : #ffffff;     /* 文字色     */
+}

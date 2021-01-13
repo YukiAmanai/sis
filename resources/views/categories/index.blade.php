@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.common')
 
 @section('content')
     
@@ -7,7 +7,7 @@
     
     <div class="card">
     @csrf
-    <a href="{{ route('posts.create', ['category_id'=>$category->id])}}">{{ $category->name }}</a>
+    <a href="{{ route('posts.create', ['category_id'=>$category->id])}}" class="button">{{ $category->gender }}{{ $category->name }}</a>
       <div class="card-body"></div>
       
     </div>

@@ -20,7 +20,7 @@ class PostController extends Controller
     public function create(Request $request)
     {
         $category_id = $request->get('category_id');
-
+        
         return view('posts.create')->with(['category_id'=>$category_id ]);
     }
 
@@ -34,7 +34,7 @@ class PostController extends Controller
     //dd($request->all());
     $post->save();
 
-    return redirect()->to(route('timeline', ['category_id'=>$id]));
+    return redirect()->to(route('timeline',['category_id'=>$id]));
    }
 
    public function delete(Post $post)
@@ -45,7 +45,7 @@ class PostController extends Controller
 
     $post->delete();
 
-    return redirect()->to('categories/index');
+    return redirect()->back();
    }
 
    public function show(Post $post)
