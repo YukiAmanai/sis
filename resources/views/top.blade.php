@@ -17,4 +17,8 @@
             その問題解消するために靴の情報を投稿し、第三者同士で情報共有できるSNSを作りました！<br>
             </p>
 
+<div id="page_top"><a href="/">TOP</a></div>
+
+<script src="js/page.top.js"></script>
+
 @endsection
