@@ -12,8 +12,9 @@
         <link href="slick/slick.css" rel="stylesheet" type="text/css">
         <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
-        <link rel="stylesheet" type="text/css" href="css/style.css" media="screen" />
+        <link rel="stylesheet" type="text/css" href="css/image.css" media="screen" />
         <link rel="stylesheet" type="text/css" href="css/page.top.css" media="screen" />
+        <link rel="stylesheet" type="text/css" href="css/style.css" media="screen" />
         <script type="text/javascript" src="slick/slick.min.js"></script>
         <link href="{{ mix('css/app.css') }}" rel="stylesheet" type="text/css">
     
