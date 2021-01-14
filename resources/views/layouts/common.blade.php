@@ -1,7 +1,8 @@
 <!DOCTYPE HTML>
 <html lang="ja">
+    
     <head>
-        <meta charset="utf-8">
+    <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="csrf-token" content="{{ csrf_token() }}">
         <title>SIS</title>
@@ -15,9 +16,9 @@
         <link rel="stylesheet" type="text/css" href="css/image.css" media="screen" />
         <link rel="stylesheet" type="text/css" href="css/page.top.css" media="screen" />
         <link rel="stylesheet" type="text/css" href="css/style.css" media="screen" />
+        <link rel="stylesheet" type="text/css" href="/css/categories.css">
         <script type="text/javascript" src="slick/slick.min.js"></script>
         <link href="{{ mix('css/app.css') }}" rel="stylesheet" type="text/css">
-    
     </head>
     <body>
         @include('parts.header')

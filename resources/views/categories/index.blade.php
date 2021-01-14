@@ -7,8 +7,8 @@
     
     <div class="card">
     @csrf
-    <a href="{{ route('posts.create', ['category_id'=>$category->id])}}">{{ $category->gender }}{{ $category->name }}</a>
-      <div class="card-body"></div>
+      <a href="{{ route('posts.create', ['category_id'=>$category->id])}}" class="button">{{ $category->gender }}{{ $category->name }}</a>
+    <div class="card-body"></div>
       
     </div>
     @endforeach
