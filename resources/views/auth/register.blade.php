@@ -28,9 +28,9 @@
                     <label for="gender" class="col-md-4 col-form-label text-md-right">Gender</label>
 
                         <div class="col-md-6" style="padding-top: 8px">
-                            <input id="gender-m" type="radio" name="gender" value="male">
+                            <input id="gender-m" type="radio" name="gender" value="男性">
                             <label for="gender-m">男性</label>
-                            <input id="gender-f" type="radio" name="gender" value="female">
+                            <input id="gender-f" type="radio" name="gender" value="女性">
                             <label for="gender-f">女性</label>
 
                             @if ($errors->has('gender'))

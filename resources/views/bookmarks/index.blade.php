@@ -9,7 +9,9 @@
           <p class="card-text">{{ $post->body }}</p>
           <p class="card-text"><a href="{{ route('posts.show', $post->id) }}">詳細を見る</a></p>
         </div>
-      </div>
+        <div>
+          <img src="data:image/png;base64,{{ $post->image }}" alt="image" style="width: 30%; height: auto;">
+        </div>
     @empty
       <p>ブックマークはありません</p>
     @endforelse
