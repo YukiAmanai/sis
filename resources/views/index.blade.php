@@ -8,7 +8,7 @@
         <div class="card-body">
             <p class="card-text">{{ $post->body }}</p>
             <p class="card-text"><a href="{{ route('posts.show', $post->id) }}">詳細を見る</a></p>
-            <span class="mr-2">
+            <span>
                 投稿日時 {{ $post->created_at->format('Y/m/d') }}
             </span>
             
@@ -26,7 +26,7 @@
       </a>
   　　　　  
             <div>
-                <img src="data:image/png;base64,{{ $post->image }}" alt="image" style="width: 30%; height: auto;">
+                <img src="data:image/png;base64,{{ $post->image }}" alt="image" style="width: 40%; height: auto;">
             </div>
         </div>
       <div>

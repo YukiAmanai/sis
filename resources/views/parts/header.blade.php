@@ -50,5 +50,5 @@
       
     </ul>
 </ul>   
-  </div><!-- /.navbar-collapse -->
+  </div>
 </nav>

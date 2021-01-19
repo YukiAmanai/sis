@@ -14,8 +14,8 @@ class PostController extends Controller
     {
         $posts = Post::where('category_id',$request->get('category_id'))
         ->with(['user'])
-        ->orderBy('created_at', 'desc')->get();
-        
+        ->orderBy('created_at', 'desc')
+        ->get();
         $category_id = $request->get('category_id');
 
         return view('index', ['posts'=>$posts, 'category_id'=>$category_id]);
@@ -45,7 +45,6 @@ class PostController extends Controller
        if (Auth::id() !== $post->user_id) {
           abort(403);
     }
-
     $post->delete();
 
     return redirect()->back();
@@ -54,7 +53,8 @@ class PostController extends Controller
    public function show(Post $post)
    {
     $post->load('replies.user');
-    $bookmarked = $post->bookmarkingUsers->contains(Auth::id());
+    $bookmarked = $post->bookmarkingUsers
+    ->contains(Auth::id());
 
     return view('posts.show', ['post' => $post, 'bookmarked' => $bookmarked]);
    }

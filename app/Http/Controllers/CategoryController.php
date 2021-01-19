@@ -11,7 +11,8 @@ class CategoryController extends Controller
     public function index()
     {
         $user = Auth::user();
-        $categories = Category::where('gender',$user->gender)->get();
+        $categories = Category::where('gender',$user->gender)
+        ->get();
        
         return view('categories.index', ['categories' => $categories ]);
     }
