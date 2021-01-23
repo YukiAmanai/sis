@@ -1,5 +1,9 @@
 @extends('layouts.common')
 
+<head>
+  @include('parts.categories_css')
+</head>
+
 @section('content')
     
 <div class="container">
@@ -7,8 +11,9 @@
     
     <div class="card">
     @csrf
-    <a href="{{ route('posts.create', ['category_id'=>$category->id])}}" class="button">{{ $category->gender }}{{ $category->name }}</a>
-      <div class="card-body"></div>
+
+    <a href="{{ route('timeline', ['category_id'=>$category->id])}}" class="button">{{ $category->gender }} : {{ $category->name }}</a>
+    <div class="card-body"></div>
       
     </div>
     @endforeach

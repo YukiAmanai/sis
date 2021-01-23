@@ -1,36 +1,27 @@
-h2{
-    margin: 100px auto;
-    text-align: center;
+h2 {
+  text-align: center;
 }
 
-h3{  
-    text-align: center;
-}
-
-p{  
-    text-align: center;
-}
-
-div{
-    text-align: center;
+div.container {
+  text-align: center;
 }
 
 .button {
-  display       : inline-block;
-  border-radius : 5%;          
-  font-size     : 26pt;        
-  cursor        : pointer;     
-  padding       : 12px;   
-  background    : #1394df;     
-  color         : #ffffff;     
-  line-height   : 1em;         
-  transition    : .3s;        
-  box-shadow    : 3px 3px 1px #666666; 
-  border        : 2px solid #1394df; 
-    
-}
-.button:hover {
-  box-shadow    : none;        /* カーソル時の影消去 */
-  color         : #1394df;     /* 背景色     */
-  background    : #ffffff;     /* 文字色     */
-}
+    display       : inline-block;
+    border-radius : 7%;          /* 角丸       */
+    font-size     : 28pt;        /* 文字サイズ */
+    text-align    : center;      /* 文字位置   */
+    cursor        : pointer;     /* カーソル   */
+    padding       : 13px 70px;   /* 余白       */
+    background    : #1a1aff;     /* 背景色     */
+    color         : #ffffff;     /* 文字色     */
+    line-height   : 1em;         /* 1行の高さ  */
+    transition    : .3s;         /* なめらか変化 */
+    box-shadow    : 5px 5px 3px #666666;  /* 影の設定 */
+    border        : 2px solid #1a1aff;    /* 枠の指定 */
+  }
+  .button:hover {
+    box-shadow    : none;        /* カーソル時の影消去 */
+    color         : #1a1aff;     /* 背景色     */
+    background    : #ffffff;     /* 文字色     */
+  }

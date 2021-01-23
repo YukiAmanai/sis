@@ -12,16 +12,20 @@ class PostController extends Controller
 {
     public function index(Request $request)
     {
-        $posts = Post::where('category_id',$request->get('category_id'))->with(['user'])->orderBy('created_at', 'desc')->get();
-        
-        return view('index', ['posts'=>$posts ]);
+        $posts = Post::where('category_id',$request->get('category_id'))
+        ->with(['user'])
+        ->orderBy('created_at', 'desc')
+        ->get();
+        $category_id = $request->get('category_id');
+
+        return view('index', ['posts'=>$posts, 'category_id'=>$category_id]);
     }
 
     public function create(Request $request)
     {
         $category_id = $request->get('category_id');
         
-        return view('posts.create')->with(['category_id'=>$category_id ]);
+        return view('posts.create')->with(['category_id'=>$category_id]);
     }
 
     public function store(Request $request)
@@ -31,7 +35,6 @@ class PostController extends Controller
     $post->user()->associate(Auth::user());
     $post->image = base64_encode(file_get_contents($request->image));
     $id = $request->get('category_id');
-    //dd($request->all());
     $post->save();
 
     return redirect()->to(route('timeline',['category_id'=>$id]));
@@ -42,7 +45,6 @@ class PostController extends Controller
        if (Auth::id() !== $post->user_id) {
           abort(403);
     }
-
     $post->delete();
 
     return redirect()->back();
@@ -51,7 +53,8 @@ class PostController extends Controller
    public function show(Post $post)
    {
     $post->load('replies.user');
-    $bookmarked = $post->bookmarkingUsers->contains(Auth::id());
+    $bookmarked = $post->bookmarkingUsers
+    ->contains(Auth::id());
 
     return view('posts.show', ['post' => $post, 'bookmarked' => $bookmarked]);
    }
