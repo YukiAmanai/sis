@@ -21,8 +21,5 @@
         </p>
         <div id="page_top"><a href="/">TOP</a></div>
 </div>
-<<<<<<< Updated upstream
+
 @endsection
-=======
-@endsection
->>>>>>> Stashed changes
