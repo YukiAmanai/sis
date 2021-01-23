@@ -24,7 +24,7 @@ Route::get('/users/{id}', 'UserController@show');
 Route::middleware('auth')->group(function () {
     Route::get('me', 'UserController@edit');
     Route::post('me', 'UserController@update')->name('users.update');
-});    
+});  
 Route::prefix('posts')->as('posts.')->group(function () {
     Route::middleware('auth')->group(function () {
         Route::get('create', 'PostController@create')->name('create');

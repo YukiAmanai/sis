@@ -1,27 +1,24 @@
 @extends('layouts.common')
 
+<head>
+  @include('parts.top_css')
+</head>
 @section('content')
 
-        <h2>シューズの情報を投稿しょう！</h2>
+  <h2>シューズの情報を投稿しょう！</h2>
 
 @include('parts.image')
 
-<script src="js/top.js"></script>
+  @include('parts.js')
 
 <div class="container">
-    <a href="{{ route('categories.index') }}" class="button">START</a>
-
+    <a href="{{ route('categories.index') }}" class="button">START</a>   
     <h3>ネット通販で靴を気軽に買えるようにする</h3>
         <p>皆さんネットで靴を購入されたことはありますか？<br>
-        今ネット通販で洋服や靴を購入するのが主流になっています<br>
-        しかし靴に関してはサイズ感が分からなかったり、購入後の見た目のイメージが異なったりして購入するのが心配だったりしますよね？<br>
+        今ネット通販で靴を購入するのが主流になっています<br>
+        しかしサイズ感が分からなかったり、購入後の見た目のイメージが異なったりして購入するのが心配だったりしますよね？<br>
         その問題解消するために靴の情報を投稿し、第三者同士で情報共有できるSNSを作りました！<br>
         </p>
-
-    <div id="page_top"><a href="/">TOPへ戻る</a></div>
-
+        <div id="page_top"><a href="/">TOP</a></div>
 </div>
-
-<script src="js/page.top.js"></script>
-
 @endsection

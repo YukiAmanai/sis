@@ -1,5 +1,9 @@
 @extends('layouts.common')
 
+<head>
+  @include('parts.categories_css')
+</head>
+
 @section('content')
     
 <div class="container">
