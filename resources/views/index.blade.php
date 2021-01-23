@@ -18,9 +18,15 @@
           @if(Auth::id() === $post->user_id)
           <form method="POST" action="{{ route('posts.delete',$post->id) }}">
             @csrf
+<<<<<<< Updated upstream
           <button type="submit" class="btn btn-danger">削除</button>
           </form>
             
+=======
+
+          <button type="submit" class="btn btn-danger">削除</button>
+          </form>         
+>>>>>>> Stashed changes
           @endif
       </div>
             <a href="{{ route('posts.create',['category_id'=>$category_id]) }}">
