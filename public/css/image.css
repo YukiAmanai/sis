@@ -2,11 +2,13 @@
     margin: 100px auto;
     width: 60%;
 }
+
 .slider img{
     height: auto;
-    width: 80%;
+    width: 90%;
     margin: auto;
 }
+
 /*slick setting*/
 .slick-prev:before,
 .slick-next:before {

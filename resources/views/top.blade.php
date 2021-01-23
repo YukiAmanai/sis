@@ -5,7 +5,7 @@
 </head>
 @section('content')
 
-  <h2>シューズの情報を投稿しょう！</h2>
+  <h1>シューズの情報を投稿しょう！</h1>
 
 @include('parts.image')
 
