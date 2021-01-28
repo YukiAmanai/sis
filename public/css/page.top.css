@@ -1,7 +1,7 @@
 #page_top {
-    position: fixed;
     bottom: 30px;
     right: 20px;
+    float: right;
 }
 
 #page_top a {

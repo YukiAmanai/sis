@@ -6,22 +6,35 @@ div.container {
   text-align: center;
 }
 
-.button {
+h3 {
+  text-align: top; 
+}
+.delete {
+  background    : red;
+  color         : #ffffff; 
+  border-radius : 14%;
+  font-size: 22px;
+  border-color:#ffffff;
+  margin-top: 15px;
+  padding-left: 18px;
+  padding-right: 18px;
+}
+  .button {
     display       : inline-block;
-    border-radius : 7%;          /* 角丸       */
-    font-size     : 28pt;        /* 文字サイズ */
-    text-align    : center;      /* 文字位置   */
-    cursor        : pointer;     /* カーソル   */
-    padding       : 13px 70px;   /* 余白       */
-    background    : #1a1aff;     /* 背景色     */
-    color         : #ffffff;     /* 文字色     */
-    line-height   : 1em;         /* 1行の高さ  */
-    transition    : .3s;         /* なめらか変化 */
-    box-shadow    : 5px 5px 3px #666666;  /* 影の設定 */
-    border        : 2px solid #1a1aff;    /* 枠の指定 */
+    border-radius : 7%;          
+    font-size     : 28pt;       
+    text-align    : center;    
+    cursor        : pointer;    
+    padding       : 13px 70px;   
+    background    : #1a1aff;    
+    color         : #ffffff;     
+    line-height   : 1em;        
+    transition    : .3s;         
+    box-shadow    : 5px 5px 3px #666666;  
+    border        : 2px solid #1a1aff;  
   }
   .button:hover {
-    box-shadow    : none;        /* カーソル時の影消去 */
-    color         : #1a1aff;     /* 背景色     */
-    background    : #ffffff;     /* 文字色     */
+    box-shadow    : none;       
+    color         : #1a1aff;    
+    background    : #ffffff;   
   }
