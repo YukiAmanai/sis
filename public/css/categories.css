@@ -12,6 +12,7 @@ a.button {
     box-shadow    : 3px 1px 2px #073ae2c7;   
     border        : 2px solid #ffffff;    
   }
+  
   a.button:hover {
     box-shadow    : none;        
     color         : #1246d6;    

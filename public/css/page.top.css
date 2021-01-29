@@ -1,7 +1,9 @@
 #page_top {
     bottom: 30px;
     right: 20px;
+    float: right;
 }
+
 #page_top a {
     background-color: #999;
     color: #fff;
@@ -9,6 +11,7 @@
     text-decoration: none;
     padding: 20px 20px;
 }
+
 #page_top a:hover {
     background-color: #666;
     text-decoration: none;
