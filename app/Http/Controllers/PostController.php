@@ -9,9 +9,11 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
 class PostController extends Controller
-{
+{ 
     public function index(Request $request)
     {
+        $search = $request->input('search');
+         //dd($request);
         $posts = Post::where('category_id',$request->get('category_id'))
         ->with(['user'])
         ->orderBy('created_at', 'desc')
