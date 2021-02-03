@@ -9,7 +9,7 @@
 ![スクリーンショット 2021-02-03 181820](https://user-images.githubusercontent.com/73517538/106726508-ce06d000-664d-11eb-8a0c-e65245275aa7.png)
 ![スクリーンショット 2021-02-03 182215](https://user-images.githubusercontent.com/73517538/106726519-cfd09380-664d-11eb-8aba-db9e92321b07.png) 
 
-##　Features
+## Features
 1. 新規登録、ログイン機能
 2. 男女別のカテゴリー選択表示
 3. 内容、画像投稿機能、返信機能
