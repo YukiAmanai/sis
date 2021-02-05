@@ -10,17 +10,15 @@ use Illuminate\Support\Facades\Auth;
 
 class PostController extends Controller
 { 
-    public function index(Request $request)
+    public function index(Request $request, Post $post)
     {
-        $search = $request->input('search');
-         //dd($request);
-        $posts = Post::where('category_id',$request->get('category_id'))
+        $category_id = $request->get('category_id');
+        $posts = Post::where('category_id',$category_id)
         ->with(['user'])
         ->orderBy('created_at', 'desc')
         ->get();
-        $category_id = $request->get('category_id');
 
-        return view('index', ['posts'=>$posts, 'category_id'=>$category_id]);
+        return view('index', ['posts'=>$posts,'category_id'=>$category_id]);
     }
 
     public function create(Request $request)

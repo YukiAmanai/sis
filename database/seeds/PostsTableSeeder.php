@@ -16,18 +16,21 @@ class PostsTableSeeder extends Seeder
             [ 
                 'category_id' =>1,
                 'user_id' => 1,
+                'title'=>'converse',
                 'body' => '初投稿です!',
                 'image'=>'vhdfhfuhfjgijdfiogjgijg',
             ],
             [
                 'category_id' =>2,
                 'user_id' => 1,
+                'title'=>'ドクターマーチン',
                 'body' => '自動でデータを入れました',
                 'image'=>'vhhuhfwefiojijjgiruhfh',
             ],
             [
                 'category_id' =>9,
                 'user_id' => 2,
+                'title'=>'converse',
                 'body' => 'ID: 2 のユーザーの投稿です',
                 'image'=>'jfierjgijoofkfokrjjrjtw',
             ],
