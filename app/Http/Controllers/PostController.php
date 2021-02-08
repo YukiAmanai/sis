@@ -6,6 +6,7 @@ use App\Models\Post;
 use App\Models\Category;
 use App\Models\Reply;
 use Illuminate\Http\Request;
+use App\Http\Requests\Post\ConfirmRequest;
 use Illuminate\Support\Facades\Auth;
 
 class PostController extends Controller
@@ -28,7 +29,7 @@ class PostController extends Controller
         return view('posts.create')->with(['category_id'=>$category_id]);
     }
 
-    public function store(Request $request)
+    public function store(ConfirmRequest $request)
    {
     $post = new Post;
     $post->fill($request->all());
