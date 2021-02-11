@@ -1,11 +1,14 @@
 .slider{
     margin: 50px auto;
     width: 60%;
+    height: 30vw; 
+    max-height: 400px;
+    min-height: 350px;
 }
 .slider img{
-    height: auto;
-    width: 80%;
-    margin: auto;
+    height: 30vw; 
+  max-height: 400px;
+  min-height: 350px;
 }
 /*slick setting*/
 .slick-prev:before,

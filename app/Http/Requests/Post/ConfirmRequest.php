@@ -32,9 +32,9 @@ class ConfirmRequest extends FormRequest
         public function messages()
     {
         return [
-            'title.required' => 'タイトルを入力してください。',
-            'title.max' => 'タイトルは20文字以内にしてください。',
-            'body.required'  => '本文を入力してください。',
+            'title.required' => 'シューズ名を入力してください。',
+            'title.max' => 'シューズ名は20文字以内にしてください。',
+            'body.required'  => '投稿内容を入力してください。',
             'image.required' => '画像を選択してください',
         ];
     }

@@ -27,9 +27,11 @@
           </form>         
           @endif
       </div>
-            <a href="{{ route('posts.create',['category_id'=>$category_id]) }}" class="post_button">
-              <button type="button" class="btn btn-primary">投稿する</button>
-            </a>
+            <div>
+                  <a href="{{ route('posts.create',['category_id'=>$category_id]) }}" class="post_button">
+                  <button type="button" class="btn btn-primary">投稿する</button>      
+                  </a>
+            </div>
   　　　　  
             <div>
                 <img src="data:image/png;base64,{{ $post->image }}" alt="image" style="width: 40%; height: auto;">

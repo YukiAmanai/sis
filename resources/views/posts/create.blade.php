@@ -17,7 +17,7 @@
     <div class="col-md-8">
       <div class="card">
       <div class="card-header">投稿する</div>
-      <input id="image" type="file" name="image"> 
+      <input id="image" type="file" class="form-control-file" name="image"> 
        <div class="form">
            <div class="form-title">
              <label for="title">シューズ名</label> 
@@ -32,6 +32,9 @@
            <div class="form-group row mb-0">
               <div class="col-md-8 offset-md-4">
              <button class="btn btn-primary" type="submit">投稿する</button>
+             <a class="btn btn-danger" href="{{ route('timeline',['category_id'=>$category_id]) }}">
+                        キャンセル
+                    </a>
            </div>
        </div>
        </div>
