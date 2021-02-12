@@ -29,7 +29,7 @@
       <div class="card">
         <div class="card-header">{{ $reply->user->name }}</div>
         <div class="card-body">
-          <p class="card-text">{{ $reply->body }}</p>
+          <p class="card-text">{!! nl2br(e($reply->body)) !!}</p>
         </div>
       </div>
     @endforeach
