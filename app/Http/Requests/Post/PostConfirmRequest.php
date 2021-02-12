@@ -4,7 +4,7 @@ namespace App\Http\Requests\Post;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class ConfirmRequest extends FormRequest
+class PostConfirmRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,17 +24,18 @@ class ConfirmRequest extends FormRequest
     public function rules()
     {
         return [
-            'title' =>'required|title|string|max:20',
-            'body' =>'required|body|string|max:255',
-            'image' =>'required|file|image|mimes:jpeg,png,jpg,gif|max:2048',
+            'title' =>'required|string|max:20',
+            'body' =>'required|string|max:255',
+            'image' =>'required',
         ];
     }
-        public function messages()
+    public function messages()
     {
         return [
             'title.required' => 'シューズ名を入力してください。',
-            'title.max' => 'シューズ名は20文字以内にしてください。',
+            'title.max' => 'シューズ名の文字数は20文字以内です',
             'body.required'  => '投稿内容を入力してください。',
+            'body.max' => '投稿内容の文字数は255文字以内です',
             'image.required' => '画像を選択してください',
         ];
     }

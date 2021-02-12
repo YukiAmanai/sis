@@ -6,7 +6,8 @@ use App\Models\Post;
 use App\Models\Category;
 use App\Models\Reply;
 use Illuminate\Http\Request;
-use App\Http\Requests\Post\ConfirmRequest;
+use App\Http\Requests\Post\PostConfirmRequest;
+use App\Http\Requests\Reply\ReplyConfirmRequest;
 use Illuminate\Support\Facades\Auth;
 
 class PostController extends Controller
@@ -18,8 +19,18 @@ class PostController extends Controller
         ->with(['user'])
         ->orderBy('created_at', 'desc')
         ->get();
+        $title = $request->get('title');
 
-        return view('index', ['posts'=>$posts,'category_id'=>$category_id]);
+        if ($title != '') {
+            $posts = Post::where('title', $title)->orwhere('category_id',$category_id)->orderBy('created_at','desc')->get();
+          }else {
+            $posts = Post::where('category_id',$category_id)
+        ->with(['user'])
+        ->orderBy('created_at', 'desc')
+        ->get();
+          }
+
+        return view('index', ['posts'=>$posts,'category_id'=>$category_id,'title'=>$title]);
     }
 
     public function create(Request $request)
@@ -29,7 +40,7 @@ class PostController extends Controller
         return view('posts.create')->with(['category_id'=>$category_id]);
     }
 
-    public function store(ConfirmRequest $request)
+    public function store(PostConfirmRequest $request)
    {
     $post = new Post;
     $post->fill($request->all());
@@ -60,7 +71,7 @@ class PostController extends Controller
     return view('posts.show', ['post' => $post, 'bookmarked' => $bookmarked]);
    }
 
-   public function reply(Request $request, Post $post)
+   public function reply(ReplyConfirmRequest $request, Post $post)
    {
     $reply = new Reply;
     $reply->fill($request->all()); 
