@@ -20,7 +20,6 @@ class PostController extends Controller
         ->orderBy('created_at', 'desc')
         ->get();
         $title = $request->get('title');
-        $search = '検索結果なし';
 
         if (!empty($title)) {
           $posts = Post::where('title','like','%'.$title.'%')->where('category_id',$category_id)

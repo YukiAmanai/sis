@@ -3,5 +3,4 @@
 <link href="slick/slick-theme.css" rel="stylesheet" type="text/css">
 <link href="slick/slick.css" rel="stylesheet" type="text/css">
 <link rel="stylesheet" type="text/css" href="css/image.css" media="screen" />        
-<link rel="stylesheet" type="text/css" href="css/page.top.css" media="screen" />
 <link rel="stylesheet" type="text/css" href="css/style.css" media="screen" />

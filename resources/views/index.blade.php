@@ -2,8 +2,7 @@
 
 <head>
 @include('parts.top_css')
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script src="js/delete.js"></script>
+@include('parts.js')
 </head>
 
 @section('content')
@@ -24,7 +23,7 @@
           <p class="card-text">投稿内容: {!! nl2br(e($post->body)) !!}</p>
           <p class="card-text"><a href="{{ route('posts.show', $post->id) }}">詳細を見る</a></p>
           <span>
-              投稿日時: {{ $post->created_at->format('Y/m/d') }}
+              投稿時間: {{ $post->created_at->diffForHumans() }}
           </span>
             
           @if(Auth::id() === $post->user_id)

@@ -7,8 +7,8 @@
 }
 .slider img{
     height: 30vw; 
-  max-height: 400px;
-  min-height: 350px;
+    max-height: 400px;
+    min-height: 350px;
 }
 /*slick setting*/
 .slick-prev:before,

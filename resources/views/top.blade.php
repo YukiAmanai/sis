@@ -4,13 +4,9 @@
   @include('parts.top_css')
 </head>
 @section('content')
-
-  <h1>シューズの情報を投稿しょう！</h1>
-
-@include('parts.image')
-
+<h1>シューズの情報を投稿しょう！</h1>
+  @include('parts.image')
   @include('parts.js')
-
 <div class="container">
     <a href="{{ route('categories.index') }}" class="button">START</a>   
     <h3>ネット通販で靴を気軽に買えるようにする</h3>
