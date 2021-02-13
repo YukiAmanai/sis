@@ -20,16 +20,20 @@ class PostController extends Controller
         ->orderBy('created_at', 'desc')
         ->get();
         $title = $request->get('title');
+        $search = '検索結果なし';
 
-        if ($title != '') {
-            $posts = Post::where('title', $title)->orwhere('category_id',$category_id)->orderBy('created_at','desc')->get();
-          }else {
-            $posts = Post::where('category_id',$category_id)
-        ->with(['user'])
-        ->orderBy('created_at', 'desc')
-        ->get();
-          }
-
+        if (!empty($title)) {
+          $posts = Post::where('title','like','%'.$title.'%')->where('category_id',$category_id)
+          ->with(['user'])
+          ->orderBy('created_at','desc')
+          ->get();
+        
+        }elseif (empty($title)) {
+          $posts = Post::where('category_id',$category_id)
+          ->with(['user'])
+          ->orderBy('created_at','desc')
+          ->get();
+        }
         return view('index', ['posts'=>$posts,'category_id'=>$category_id,'title'=>$title]);
     }
 
