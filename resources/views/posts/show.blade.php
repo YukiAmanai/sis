@@ -5,7 +5,10 @@
     <div class="card">
       <div class="card-header">{{ $post->user->name }}</div>
       <div class="card-body">
-        <p class="card-text">{{ $post->body }}</p>
+        <p class="card-text">{!! nl2br(e($post->body)) !!}</p>
+        <div>
+          <img src="data:image/png;base64,{{ $post->image }}" alt="image" style="width: 30%; height: auto;">
+        </div>
     @auth
      @unless($bookmarked)
       <form method="POST" action="{{ route('bookmarks.add', $post->id) }}">
