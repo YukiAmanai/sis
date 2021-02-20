@@ -21,16 +21,15 @@ class PostController extends Controller
         ->get();
         $title = $request->get('title');
 
-        if (!empty($title)) {
+        if ($post->title = $title) {
           $posts = Post::where('title','like','%'.$title.'%')->where('category_id',$category_id)
           ->with(['user'])
           ->orderBy('created_at','desc')
           ->get();
-        
-        }elseif (empty($title)) {
+        }elseif ($post->title != $title){
           $posts = Post::where('category_id',$category_id)
           ->with(['user'])
-          ->orderBy('created_at','desc')
+          ->orderBy('created_at', 'desc')
           ->get();
         }
         return view('index', ['posts'=>$posts,'category_id'=>$category_id,'title'=>$title]);
