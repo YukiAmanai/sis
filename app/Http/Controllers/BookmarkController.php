@@ -1,10 +1,8 @@
 <?php
 
 namespace App\Http\Controllers;
-//use App\Models\Bookmark;
 use App\Models\Post;
 use Illuminate\Support\Facades\Auth;
-//use Illuminate\Http\Request;
 
 class BookmarkController extends Controller
 {

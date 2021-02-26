@@ -42,11 +42,9 @@
           </div>
         </div>
     @empty
-    <div>
-      <p>検索結果なし</p>
-        <a class="btn btn-secondary" href="{{ route('timeline',['category_id'=>$category_id]) }}">
-                    タイムラインに戻る
-        </a>
+      <div class="container">
+        <p>検索結果なし</p>
+          <a class="btn btn-secondary" href="{{ route('timeline',['category_id'=>$category_id]) }}">タイムラインに戻る</a>
       </div>
     @endforelse
   </div>
