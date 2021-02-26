@@ -37,20 +37,6 @@
                   <button type="button" class="btn btn-primary">投稿する</button>      
                   </a>
             </div>
-
-             <div>
-                @if($post->is_liked_by_auth_user())
-                  <a href="{{ route('posts.unlike', ['id' => $post->id]) }}">
-                  <button type="button" class="btn btn-success">いいね{{ $post->likes->count() }}</button>
-                  </a>
-                @else
-                  <a href="{{ route('posts.like', ['id' => $post->id]) }}">
-                  <button type="button" class="btn btn-secondary">いいね{{ $post->likes->count() }}</button>
-                  </a>
-                @endif
-                <P>いいね数:{{ $post->likes->count() }}</p>
-            </div>
-
           <div>
             <img src="data:image/png;base64,{{ $post->image }}" alt="image" style="width: 40%; height: auto;">
           </div>

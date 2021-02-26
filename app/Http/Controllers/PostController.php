@@ -85,22 +85,4 @@ class PostController extends Controller
 
     return redirect()->back();
    }
-
-   public function like($id)
-   {
-     Like::create([
-       'post_id' => $id,
-       'user_id' => Auth::id(),
-     ]);
- 
-     return redirect()->back();
-   }
-
-   public function unlike($id)
-   {
-     $like = Like::where('post_id', $id)->where('user_id', Auth::id())->first();
-     $like->delete();
- 
-     return redirect()->back();
-   }
 }
