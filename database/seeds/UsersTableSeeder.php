@@ -15,8 +15,8 @@ class UsersTableSeeder extends Seeder
     {
         $dataSet = [
             [
-                'name' => 'トム',
-                'email' => 'tom@example.com',
+                'name' => '天内優希',
+                'email' => 'yuuy15152525@outlook.jp',
                 'gender'=> '男性',
                 'password' => bcrypt('password'),
                 
