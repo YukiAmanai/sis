@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Post;
 use App\Models\Category;
 use App\Models\Reply;
+use App\Models\Like;
 use Illuminate\Http\Request;
 use App\Http\Requests\Post\PostConfirmRequest;
 use App\Http\Requests\Reply\ReplyConfirmRequest;
@@ -31,6 +32,7 @@ class PostController extends Controller
           ->with(['user'])
           ->orderBy('created_at', 'desc')
           ->get();
+          
         }
         return view('index', ['posts'=>$posts,'category_id'=>$category_id,'title'=>$title]);
     }
@@ -82,5 +84,23 @@ class PostController extends Controller
     $reply->save();
 
     return redirect()->back();
+   }
+
+   public function like($id)
+   {
+     Like::create([
+       'post_id' => $id,
+       'user_id' => Auth::id(),
+     ]);
+ 
+     return redirect()->back();
+   }
+
+   public function unlike($id)
+   {
+     $like = Like::where('post_id', $id)->where('user_id', Auth::id())->first();
+     $like->delete();
+ 
+     return redirect()->back();
    }
 }

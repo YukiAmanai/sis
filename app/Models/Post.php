@@ -32,4 +32,25 @@ class Post extends Model
     {
         return $this->belongsTo(Category::class);
     }
+
+    public function likes()
+    {
+      return $this->hasMany(Like::class, 'Post_id');
+    }
+
+    public function is_liked_by_auth_user()
+    {
+      $user = Auth::id();
+      $likers = array();
+      foreach($this->likes as $like) {
+        array_push($likers, $like->user_id);
+      }
+  
+      if (in_array($user, $likers)) {
+        return true;
+      } else {
+        return false;
+      }
+    }
+
 }

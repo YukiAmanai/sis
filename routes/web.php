@@ -42,4 +42,8 @@ Route::middleware('auth')->prefix('bookmarks')->as('bookmarks.')->group(function
     Route::post('{post}/remove', 'BookmarkController@remove')->name('remove');
 });
 
+Route::get('/posts/like/{id}', 'PostController@like')->name('posts.like');
+Route::get('/posts/unlike/{id}', 'PostController@unlike')->name('posts.unlike');
+
+
 Route::get('categories/index', 'CategoryController@index')->middleware('auth')->name('categories.index');
