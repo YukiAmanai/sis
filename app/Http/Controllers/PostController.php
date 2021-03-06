@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use App\Models\Post;
 use App\Models\Category;
 use App\Models\Reply;
-use App\Models\Like;
 use Illuminate\Http\Request;
 use App\Http\Requests\Post\PostConfirmRequest;
 use App\Http\Requests\Reply\ReplyConfirmRequest;
