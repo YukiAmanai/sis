@@ -19,22 +19,20 @@ class PostController extends Controller
         ->with(['user'])
         ->orderBy('created_at', 'desc')
         ->get();
+
         $title = $request->get('title');
 
-        if ($post->title = $title) {
-          $posts = Post::where('title','like','%'.$title.'%')->where('category_id',$category_id)
+        if (!empty($title)) {
+          $query = Post::query();
+          $posts = $query->where('title','like','%'.$title.'%')
+          ->where('category_id',$category_id)
           ->with(['user'])
           ->orderBy('created_at','desc')
           ->get();
-        }elseif ($post->title != $title){
-          $posts = Post::where('category_id',$category_id)
-          ->with(['user'])
-          ->orderBy('created_at', 'desc')
-          ->get();
-          
         }
+
         return view('index', ['posts'=>$posts,'category_id'=>$category_id,'title'=>$title]);
-    }
+  }
 
     public function create(Request $request)
     {
@@ -49,10 +47,10 @@ class PostController extends Controller
     $post->fill($request->all());
     $post->user()->associate(Auth::user());
     $post->image = base64_encode(file_get_contents($request->image));
-    $id = $request->get('category_id');
+    $category_id = $request->get('category_id');
     $post->save();
 
-    return redirect()->to(route('timeline',['category_id'=>$id]));
+    return redirect()->to(route('timeline',['category_id'=>$category_id]));
    }
 
    public function delete(Post $post)

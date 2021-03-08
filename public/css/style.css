@@ -1,43 +1,43 @@
-  h1 {
-    font-size: 1px;
-    padding: 10px 0;
-    text-align: center;
-    margin: 1.5em 0;
-  }
+h1 {
+  font-size: 1px;
+  padding: 10px 0;
+  text-align: center;
+  margin: 1.5em 0;
+}
 
 div.container {
-  text-align: center;
+text-align: center;
 }
 
 h3 {
-  text-align: top; 
+text-align: top; 
 }
 .delete {
-  background    : red;
-  color         : #ffffff; 
-  border-radius : 14%;
-  font-size: 22px;
-  border-color:#ffffff;
-  margin-top: 15px;
-  padding-left: 18px;
-  padding-right: 18px;
+background    : red;
+color         : #ffffff; 
+border-radius : 14%;
+font-size: 22px;
+border-color:#ffffff;
+margin-top: 15px;
+padding-left: 18px;
+padding-right: 18px;
 }
-  .button {
-    display       : inline-block;
-    border-radius : 7%;          
-    font-size     : 28pt;       
-    text-align    : center;    
-    cursor        : pointer;    
-    padding       : 13px 70px;   
-    background    : #1a1aff;    
-    color         : #ffffff;     
-    line-height   : 1em;        
-    transition    : .3s;         
-    box-shadow    : 5px 5px 3px #666666;  
-    border        : 2px solid #1a1aff;  
-  }
-  .button:hover {
-    box-shadow    : none;       
-    color         : #1a1aff;    
-    background    : #ffffff;   
-  }
+.button {
+  display       : inline-block;
+  border-radius : 7%;          
+  font-size     : 28pt;       
+  text-align    : center;    
+  cursor        : pointer;    
+  padding       : 13px 70px;   
+  background    : #1a1aff;    
+  color         : #ffffff;     
+  line-height   : 1em;        
+  transition    : .3s;         
+  box-shadow    : 5px 5px 3px #666666;  
+  border        : 2px solid #1a1aff;  
+}
+.button:hover {
+  box-shadow    : none;       
+  color         : #1a1aff;    
+  background    : #ffffff;   
+}

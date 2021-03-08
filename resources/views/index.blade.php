@@ -23,7 +23,10 @@
           <p class="card-text">シューズ名: {{ $post->title}}</p>
           <p class="card-text">投稿内容: {!! nl2br(e($post->body)) !!}</p>
           <p class="card-text">投稿時間: {{ $post->created_at->diffForHumans() }}<p>
-          <p class="card-text"><a href="{{ route('posts.show', $post->id) }}">詳細を見る</a></p>
+          <p class="card-text"><a href="{{ route('posts.show', $post->id) }}" class="btn btn-secondary">詳細を見る</a></p>
+          <div>   
+          <img src="data:image/png;base64,{{ $post->image }}" class="card-img-top" alt="image" style="width: 40%; height: auto;">
+        </div>
             
           @if(Auth::id() === $post->user_id)
           <form method="POST" action="{{ route('posts.delete',$post->id) }}">
@@ -37,9 +40,6 @@
                   <button type="button" class="btn btn-primary">投稿する</button>      
                   </a>
             </div>
-          <div>
-            <img src="data:image/png;base64,{{ $post->image }}" alt="image" style="width: 40%; height: auto;">
-          </div>
         </div>
     @empty
       <div class="container">

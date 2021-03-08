@@ -3,12 +3,12 @@
 @section('content')
   <div class="container">
     <div class="card">
+      <div>
+        <img src="data:image/png;base64,{{ $post->image }}" class="card-img-top" alt="image" style="width: 30%; height: auto;">
+      </div>
       <div class="card-header">{{ $post->user->name }}</div>
       <div class="card-body">
         <p class="card-text">{!! nl2br(e($post->body)) !!}</p>
-        <div>
-          <img src="data:image/png;base64,{{ $post->image }}" alt="image" style="width: 30%; height: auto;">
-        </div>
     @auth
      @unless($bookmarked)
       <form method="POST" action="{{ route('bookmarks.add', $post->id) }}">

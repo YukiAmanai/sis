@@ -1,14 +1,14 @@
 # SIS
 
 ## 概要
-　靴の情報を第三者同士で共有することでネットで購入する際に失敗する問題を解決する
+    インターネットで靴を購入する際にサイズ感が分からないことや購入する靴の詳細情報がない原因で購入後失敗する体験をした経験から、靴の情報を第三者同士で共有することでネットで購入する際に失敗する問題を解決するSNSを作りました
 
 ## DEMO
 ![スクリーンショット 2021-02-03 181641](https://user-images.githubusercontent.com/73517538/106726488-c810ef00-664d-11eb-8fd2-59048e76bc48.png)
 ![スクリーンショット 2021-02-03 181755](https://user-images.githubusercontent.com/73517538/106726502-cba47600-664d-11eb-88a3-e65884be551c.png)
 ![スクリーンショット 2021-02-03 181820](https://user-images.githubusercontent.com/73517538/106726508-ce06d000-664d-11eb-8a0c-e65245275aa7.png)
-![スクリーンショット 2021-02-03 182215](https://user-images.githubusercontent.com/73517538/106726519-cfd09380-664d-11eb-8aba-db9e92321b07.png) 
-
+![スクリーンショット 2021-03-08 145116](https://user-images.githubusercontent.com/73517538/110280480-3a466c00-801e-11eb-95ba-36b056ac1b80.png)
+ 
 ## Features
 1. 新規登録、ログイン機能
 2. 男女別のカテゴリー選択表示
