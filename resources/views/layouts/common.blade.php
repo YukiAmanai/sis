@@ -10,9 +10,8 @@
 </head>
     <body>
         @include('parts.header')
-       
         @yield('content')
-        <footer class="footer bg-dark  fixed-bottom">
+        <footer class="footer bg-dark">
             @include('parts.footer')
         </footer>
         <script src="{{ mix('js/app.js') }}"></script>

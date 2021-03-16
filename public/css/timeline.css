@@ -1,0 +1,18 @@
+.delete {
+    background    : red;
+    color         : #ffffff; 
+    border-radius : 14%;
+    font-size: 22px;
+    border-color:#ffffff;
+    margin-top: 15px;
+    padding-left: 18px;
+    padding-right: 18px;
+    }
+
+ div.container {
+   text-align: center;
+  }
+
+  p.card-text{
+    text-align: center;
+  }
