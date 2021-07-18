@@ -10,7 +10,7 @@ class BookmarkController extends Controller
     {
         $posts = Auth::user()->bookmarkingPosts;
 
-        return view('bookmarks.index', ['posts' => $posts]);
+        return view('bookmarks.index', compact('posts'));
     }
 
     public function add(Post $post)

@@ -33,7 +33,7 @@ class PostController extends Controller
           ->get();
         }
 
-        return view('index', ['posts' => $posts,'category_id' => $category_id,'title' => $title]);
+        return view('index', compact('category_id','posts','title'));
   }
 
     public function create(Request $request)
@@ -53,7 +53,7 @@ class PostController extends Controller
     $category_id = $request->get('category_id');
     $post->save();
 
-    return redirect()->to(route('timeline',['category_id'=>$category_id]));
+    return redirect()->to(route('timeline',compact('category_id')));
    }
 
    public function delete(Post $post)
@@ -71,7 +71,7 @@ class PostController extends Controller
     $post->load('replies.user');
     $bookmarked = $post->bookmarkingUsers->contains(Auth::id());
 
-    return view('posts.show', ['post' => $post, 'bookmarked' => $bookmarked]);
+    return view('posts.show', compact('post','bookmarked'));
    }
 
 
