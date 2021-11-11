@@ -4,4 +4,3 @@
 <link href="slick/slick.css" rel="stylesheet" type="text/css">
 <link rel="stylesheet" type="text/css" href="css/image.css" media="screen" />        
 <link rel="stylesheet" type="text/css" href="css/style.css" media="screen" />
-

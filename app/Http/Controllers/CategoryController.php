@@ -13,8 +13,8 @@ class CategoryController extends Controller
         $user = Auth::user();
         $categories = Category::where('gender',$user->gender)
         ->get();
-       
+
         return view('categories.index', ['categories' => $categories ]);
     }
- 
+
 }
