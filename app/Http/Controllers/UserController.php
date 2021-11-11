@@ -12,14 +12,14 @@ class UserController extends Controller
     {
         $user = User::find($id);
 
-        return view('users.show', ['user'=>$user]);
+        return view('users.show', compact('user'));
     }
 
     public function edit()
     {
         $user = Auth::user();
 
-        return view('users.edit', ['user' => $user]);
+        return view('users.edit', compact('user'));
     }
 
     public function update(UpdateRequest $request)

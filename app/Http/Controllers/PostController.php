@@ -15,14 +15,16 @@ class PostController extends Controller
     public function index(Request $request, Post $post)
     {
         $category_id = $request->get('category_id');
+
+        //カテゴリーの投稿一覧取得
         $posts = Post::where('category_id',$category_id)
         ->with(['user'])
         ->orderBy('created_at', 'desc')
         ->get();
 
         $title = $request->get('title');
-
-        if (!empty($title)) {
+        //検索機能
+        if ($title) {
           $query = Post::query();
           $posts = $query->where('title','like','%'.$title.'%')
           ->where('category_id',$category_id)
@@ -31,7 +33,7 @@ class PostController extends Controller
           ->get();
         }
 
-        return view('index', ['posts'=>$posts,'category_id'=>$category_id,'title'=>$title]);
+        return view('index', compact('category_id','posts','title'));
   }
 
     public function create(Request $request)
@@ -42,10 +44,11 @@ class PostController extends Controller
     }
 
     public function store(PostConfirmRequest $request)
-   {
+  {
     $post = new Post;
     $post->fill($request->all());
     $post->user()->associate(Auth::user());
+    $category_id = $request->get('category_id');
     $post->image = base64_encode(file_get_contents($request->image));
     $category_id = $request->get('category_id');
     $post->save();
@@ -66,8 +69,7 @@ class PostController extends Controller
   public function show(Post $post)
   {
     $post->load('replies.user');
-    $bookmarked = $post->bookmarkingUsers
-    ->contains(Auth::id());
+    $bookmarked = $post->bookmarkingUsers->contains(Auth::id());
 
     return view('posts.show', ['post' => $post, 'bookmarked' => $bookmarked]);
   }
