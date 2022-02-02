@@ -53,6 +53,7 @@ class PostController extends Controller
     $category_id = $request->get('category_id');
     $post->save();
 
+
     return redirect()->to(route('timeline',compact('category_id')));
   }
 
@@ -73,7 +74,6 @@ class PostController extends Controller
 
     return view('posts.show', compact('post','bookmarked'));
   }
-
 
   public function reply(ReplyConfirmRequest $request, Post $post)
   {

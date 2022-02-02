@@ -13,7 +13,7 @@
 
 Route::get('/', function () {
     
-       return view('top');
+    return view('top');
 });
 
 Route::get('timeline', 'PostController@index')->name('timeline');
