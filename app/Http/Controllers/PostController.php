@@ -53,6 +53,7 @@ class PostController extends Controller
     $category_id = $request->get('category_id');
     $post->save();
 
+
     return redirect()->to(route('timeline',compact('category_id')));
   }
 
