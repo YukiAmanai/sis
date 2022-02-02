@@ -74,7 +74,6 @@ class PostController extends Controller
     return view('posts.show', compact('post','bookmarked'));
   }
 
-
   public function reply(ReplyConfirmRequest $request, Post $post)
   {
     $reply = new Reply;
