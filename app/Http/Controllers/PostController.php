@@ -43,8 +43,8 @@ class PostController extends Controller
         return view('posts.create')->with(['category_id'=>$category_id]);
     }
 
-    public function store(PostConfirmRequest $request)
-  {
+    public function store(PostConfirmRequest $request) 
+    {
     $post = new Post;
     $post->fill($request->all());
     $post->user()->associate(Auth::user());
@@ -53,12 +53,13 @@ class PostController extends Controller
     $category_id = $request->get('category_id');
     $post->save();
 
-    return redirect()->to(route('timeline',['category_id'=>$category_id]));
+
+    return redirect()->to(route('timeline',compact('category_id')));
   }
 
   public function delete(Post $post)
   {
-      if (Auth::id() !== $post->user_id) {
+    if (Auth::id() !== $post->user_id) {
           abort(403);
     }
     $post->delete();
@@ -71,7 +72,7 @@ class PostController extends Controller
     $post->load('replies.user');
     $bookmarked = $post->bookmarkingUsers->contains(Auth::id());
 
-    return view('posts.show', ['post' => $post, 'bookmarked' => $bookmarked]);
+    return view('posts.show', compact('post','bookmarked'));
   }
 
   public function reply(ReplyConfirmRequest $request, Post $post)
